@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+import Layout from '../components/Layout'
+
+export default function Home(): JSX.Element {
   return (
     <div className={styles.container}>
       <Head>
@@ -10,17 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={styles.header}>
-        <h1>人口推移</h1>
-      </header>
-
-      <main className={styles.main}>
-        <p>Hello</p>
-      </main>
-
-      <footer className={styles.footer}>
-        <small>Powered by Vercel / Next.js / RESAS API / Highchart</small>
-      </footer>
+      <Layout>
+        <p>TEST</p>
+      </Layout>
     </div>
   )
 }
