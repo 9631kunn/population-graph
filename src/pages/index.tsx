@@ -3,7 +3,11 @@ import styles from '../styles/Home.module.css'
 
 import Layout from '../components/Layout'
 
-export default function Home(): JSX.Element {
+import { ResponsePrefectures } from '../models/Api'
+import { getPrefectures } from '../lib/getData'
+
+export default function Home(props: ResponsePrefectures): JSX.Element {
+  console.log(props)
   return (
     <div className={styles.container}>
       <Head>
@@ -17,4 +21,8 @@ export default function Home(): JSX.Element {
       </Layout>
     </div>
   )
+}
+
+Home.getInitialProps = () => {
+  return getPrefectures()
 }
