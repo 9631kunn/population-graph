@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { RecoilRoot } from 'recoil'
 import styles from '../styles/Home.module.css'
 
 import Layout from '../components/Layout'
@@ -18,8 +19,10 @@ export default function Home(props: ResponsePrefectures): JSX.Element {
       </Head>
 
       <Layout>
-        <Prefectures {...props} />
-        <Chart />
+        <RecoilRoot>
+          <Prefectures {...props} />
+          <Chart />
+        </RecoilRoot>
       </Layout>
     </div>
   )
