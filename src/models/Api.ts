@@ -5,6 +5,12 @@ export type ApiKey = {
   }
 }
 
+// チャートで使用する人口情報
+export type ChartPopulation = {
+  name: string
+  data: number[]
+}
+
 // APIから返ってくる都道府県情報
 export type ResponsePrefecture = {
   prefCode: number
@@ -15,4 +21,24 @@ export type ResponsePrefecture = {
 export type ResponsePrefectures = {
   message: null | string
   result: [ResponsePrefecture]
+}
+
+// APIから返ってくる都道府県別人口情報の配列
+export type ResponsePopulation = {
+  message: null | string
+  result: {
+    boundaryYear: number
+    data: [
+      {
+        label: string
+        data: [
+          {
+            year: number
+            value: number
+            rate: number
+          }
+        ]
+      }
+    ]
+  }
 }
