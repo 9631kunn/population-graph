@@ -1,9 +1,13 @@
 import fetch from 'isomorphic-unfetch'
 import { ApiKey, ResponsePrefectures } from '../models/Api'
 
+const NEXT_PUBLIC_RESAS_API_KEY: string = process.env.NEXT_PUBLIC_RESAS_API_KEY
+  ? process.env.NEXT_PUBLIC_RESAS_API_KEY
+  : ''
+
 export const key: ApiKey = {
   headers: {
-    'X-API-KEY': process.env.NEXT_PUBLIC_RESAS_API_KEY
+    'X-API-KEY': NEXT_PUBLIC_RESAS_API_KEY
   }
 }
 
