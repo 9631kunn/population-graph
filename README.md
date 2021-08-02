@@ -8,6 +8,11 @@
 | ---------- | ----- | ---- |
 | Highcharts | RESAS | JEST |
 
+## テスト項目
+
+- RESAS APIでの全都道府県データ取得
+
+
 ## 参考
 
 \*RESAS API: https://opendata.resas-portal.go.jp/

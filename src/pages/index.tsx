@@ -2,12 +2,13 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import Layout from '../components/Layout'
+import Prefectures from '../components/Prefectures'
+import Chart from '../components/Chart'
 
 import { ResponsePrefectures } from '../models/Api'
 import { getPrefectures } from '../lib/getData'
 
 export default function Home(props: ResponsePrefectures): JSX.Element {
-  console.log(props)
   return (
     <div className={styles.container}>
       <Head>
@@ -17,7 +18,8 @@ export default function Home(props: ResponsePrefectures): JSX.Element {
       </Head>
 
       <Layout>
-        <p>TEST</p>
+        <Prefectures {...props} />
+        <Chart />
       </Layout>
     </div>
   )
