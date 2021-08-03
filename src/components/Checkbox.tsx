@@ -1,12 +1,15 @@
 import { useRecoilState } from 'recoil'
 import { ResponsePrefecture } from '../models/Api'
+import { loadingState } from '../atoms/loading'
 import { checkedPrefecturesState } from '../atoms/checkedPrefectures'
-import { getPopulation } from '../lib/getData'
 import { prefecturePopulationState } from '../atoms/prefecturePopulation'
+import { getPopulation } from '../lib/getData'
 import { Wrap } from '../styles/components/checkbox'
 
 const Checkbox = ({ pref }: { pref: ResponsePrefecture }): JSX.Element => {
   const { prefCode, prefName } = pref
+
+  const [loading, setLoading] = useRecoilState(loadingState)
 
   // チェックの入った都道府県IDの配列
   const [checkedPrefectures, setCheckedPrefectures] = useRecoilState(
@@ -18,6 +21,7 @@ const Checkbox = ({ pref }: { pref: ResponsePrefecture }): JSX.Element => {
   )
 
   const handleChange = async () => {
+    setLoading(true)
     // 既にチェック入ってたらStateから削除
     if (checkedPrefectures.includes(prefCode)) {
       // チェック入った都道府県
@@ -30,7 +34,7 @@ const Checkbox = ({ pref }: { pref: ResponsePrefecture }): JSX.Element => {
         (p) => p.name !== prefName
       )
       setPrefecturePopulation(copyPrefecturePopulation)
-
+      setLoading(false)
       return
     }
 
@@ -48,6 +52,7 @@ const Checkbox = ({ pref }: { pref: ResponsePrefecture }): JSX.Element => {
         data: populationArray
       }
     ])
+    setLoading(false)
   }
 
   return (
