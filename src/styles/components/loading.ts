@@ -8,7 +8,8 @@ export const Wrap = styled.div`
   font-size: 20px;
   justify-content: center;
   height: 100vh;
-  position: absolute;
+  position: fixed;
+  top: 0;
   width: 100vw;
   z-index: 99999;
 
@@ -19,7 +20,6 @@ export const Wrap = styled.div`
     border-radius: 100%;
     content: '';
     height: 20px;
-    mnargin-right: 10px;
     width: 20px;
   }
 
