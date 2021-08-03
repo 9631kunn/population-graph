@@ -1,10 +1,14 @@
 import React from 'react'
-import styles from '../styles/Home.module.css'
+import styled from 'styled-components'
+
+const Wrap = styled.footer`
+  background: #eee;
+`
 
 const Footer = (): JSX.Element => (
-  <footer className={styles.footer}>
+  <Wrap>
     <small>Powered by Vercel / Next.js / RESAS API / Highchart</small>
-  </footer>
+  </Wrap>
 )
 
 export default Footer

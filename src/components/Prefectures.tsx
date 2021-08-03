@@ -1,20 +1,22 @@
 import Checkbox from './Checkbox'
-
-import styles from '../styles/Home.module.css'
-
+import styled from 'styled-components'
 import { ResponsePrefectures } from '../models/Api'
+
+const Wrap = styled.ul`
+  background: #aaa;
+`
 
 const Prefectures = (props: ResponsePrefectures): JSX.Element => {
   const prefectures = props.result
 
   return (
-    <ul className={styles.prefectures}>
+    <Wrap>
       <li>
         {prefectures.map((pref) => (
           <Checkbox key={pref.prefCode} pref={pref} />
         ))}
       </li>
-    </ul>
+    </Wrap>
   )
 }
 

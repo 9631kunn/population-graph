@@ -1,10 +1,14 @@
 import React from 'react'
-import styles from '../styles/Home.module.css'
+import styled from 'styled-components'
+
+const Wrap = styled.header`
+  background: #ccc;
+`
 
 const Header = (): JSX.Element => (
-  <header className={styles.header}>
+  <Wrap>
     <h1>人口推移</h1>
-  </header>
+  </Wrap>
 )
 
 export default Header
