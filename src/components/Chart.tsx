@@ -2,10 +2,10 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { useRecoilState } from 'recoil'
 import { prefecturePopulationState } from '../atoms/prefecturePopulation'
+import { Wrap } from '../styles/components/chart'
 
 const Chart = (): JSX.Element => {
   const [prefecturePopulation] = useRecoilState(prefecturePopulationState)
-  console.log(prefecturePopulation)
 
   const options = {
     title: {
@@ -30,7 +30,11 @@ const Chart = (): JSX.Element => {
     series: prefecturePopulation
   }
 
-  return <HighchartsReact highcharts={Highcharts} options={options} />
+  return (
+    <Wrap>
+      <HighchartsReact highcharts={Highcharts} options={options} />
+    </Wrap>
+  )
 }
 
 export default Chart

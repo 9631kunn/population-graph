@@ -3,23 +3,20 @@ import styled from 'styled-components'
 
 import Header from './Header'
 import Footer from './Footer'
+import { Container } from '../styles/components/container'
 
 type LayoutChildren = {
   children: React.ReactNode
 }
 
-const Wrap = styled.div``
-
-const Main = styled.main`
-  background: #ddd;
-`
-
 const Layout = ({ children }: LayoutChildren): JSX.Element => (
-  <Wrap>
+  <div>
     <Header />
-    <Main>{children}</Main>
+    <main>
+      <Container>{children}</Container>
+    </main>
     <Footer />
-  </Wrap>
+  </div>
 )
 
 export default Layout

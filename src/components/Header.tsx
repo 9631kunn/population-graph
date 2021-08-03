@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { Wrap, Container } from '../styles/components/header'
+import { Wrap } from '../styles/components/header'
+import { Container } from '../styles/components/container'
 
 import Logo from './Logo'
 // import Logo from '../images/logo.svg'
