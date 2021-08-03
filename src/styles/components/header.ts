@@ -12,7 +12,6 @@ export const Wrap = styled.header`
     display: flex;
     justify-content: center;
     span {
-      font-family: ${({ theme }) => theme.font.logo};
       font-weight: 100;
     }
   }
