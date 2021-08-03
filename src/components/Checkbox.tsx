@@ -44,9 +44,6 @@ const Checkbox = ({ pref }: { pref: ResponsePrefecture }): JSX.Element => {
         data: populationArray
       }
     ])
-
-    console.log(checkedPrefectures)
-    console.log(prefecturePopulation)
   }
 
   return (
