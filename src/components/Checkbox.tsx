@@ -3,6 +3,7 @@ import { ResponsePrefecture } from '../models/Api'
 import { checkedPrefecturesState } from '../atoms/checkedPrefectures'
 import { getPopulation } from '../lib/getData'
 import { prefecturePopulationState } from '../atoms/prefecturePopulation'
+import { Wrap } from '../styles/components/checkbox'
 
 const Checkbox = ({ pref }: { pref: ResponsePrefecture }): JSX.Element => {
   const { prefCode, prefName } = pref
@@ -19,14 +20,17 @@ const Checkbox = ({ pref }: { pref: ResponsePrefecture }): JSX.Element => {
   const handleChange = async () => {
     // 既にチェック入ってたらStateから削除
     if (checkedPrefectures.includes(prefCode)) {
+      // チェック入った都道府県
       const copyCheckedPrefectures = [...checkedPrefectures].filter(
         (c) => c !== prefCode
       )
+      setCheckedPrefectures(copyCheckedPrefectures)
+      // チェック入った都道府県の人口データ
       const copyPrefecturePopulation = [...prefecturePopulation].filter(
         (p) => p.name !== prefName
       )
-      setCheckedPrefectures(copyCheckedPrefectures)
       setPrefecturePopulation(copyPrefecturePopulation)
+
       return
     }
 
@@ -47,10 +51,10 @@ const Checkbox = ({ pref }: { pref: ResponsePrefecture }): JSX.Element => {
   }
 
   return (
-    <label>
+    <Wrap>
       <input type="checkbox" onClick={() => handleChange()} />
-      {pref.prefName}
-    </label>
+      <span>{pref.prefName}</span>
+    </Wrap>
   )
 }
 

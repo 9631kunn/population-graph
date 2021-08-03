@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from '../styles/Home.module.css'
+import styled from 'styled-components'
 
 import Header from './Header'
 import Footer from './Footer'
+import { Container } from '../styles/components/container'
 
 type LayoutChildren = {
   children: React.ReactNode
@@ -11,7 +12,9 @@ type LayoutChildren = {
 const Layout = ({ children }: LayoutChildren): JSX.Element => (
   <div>
     <Header />
-    <main className={styles.main}>{children}</main>
+    <main>
+      <Container>{children}</Container>
+    </main>
     <Footer />
   </div>
 )

@@ -4,9 +4,9 @@
 
 ## 仕様
 
-| chart      | API   | TEST | 状態管理 |
-| ---------- | ----- | ---- | ------ |
-| Highcharts | RESAS | JEST | Recoil |
+| chart      | API   | TEST | 状態管理 | スタイル         |
+| ---------- | ----- | ---- | ------ | ---------------- |
+| Highcharts | RESAS | JEST | Recoil | styled-components|
 
 ## テスト項目
 

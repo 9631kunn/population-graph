@@ -1,10 +1,16 @@
 import React from 'react'
-import styles from '../styles/Home.module.css'
+import { Wrap } from '../styles/components/footer'
+import { Container } from '../styles/components/container'
 
 const Footer = (): JSX.Element => (
-  <footer className={styles.footer}>
-    <small>Powered by Vercel / Next.js / RESAS API / Highchart</small>
-  </footer>
+  <Wrap>
+    <Container>
+      <small className="copyright">
+        Powered by <a href="https://">Vercel</a> / Next.js / RESAS API /
+        Highchart
+      </small>
+    </Container>
+  </Wrap>
 )
 
 export default Footer
