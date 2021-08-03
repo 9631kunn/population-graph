@@ -1,16 +1,33 @@
 import React from 'react'
-import styled from 'styled-components'
+import { useRouter } from 'next/router'
+import { Wrap, Container } from '../styles/components/header'
 
-const Wrap = styled.header`
-  background: #fff;
-  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.29);
-  height: ${({ theme }) => theme.headerHeight};
-`
+import Logo from './Logo'
+// import Logo from '../images/logo.svg'
 
 const Header = (): JSX.Element => {
+  // location.pathnameによってタグ変更
+  const router = useRouter()
+  let titleTag: JSX.Element
+  if (router.pathname === '/') {
+    titleTag = (
+      <h1 className="title">
+        <span>人口推移</span>
+        <Logo />
+      </h1>
+    )
+  } else {
+    titleTag = (
+      <h3 className="title">
+        <span>人口推移</span>
+        <Logo />
+      </h3>
+    )
+  }
+
   return (
     <Wrap>
-      <h1>人口推移</h1>
+      <Container>{titleTag}</Container>
     </Wrap>
   )
 }
