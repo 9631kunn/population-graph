@@ -4,7 +4,7 @@ import { Wrap } from '../styles/components/header'
 import { Container } from '../styles/components/container'
 
 import Logo from './Logo'
-// import Logo from '../images/logo.svg'
+import LogoText from '../images/logo-text.svg'
 
 const Header = (): JSX.Element => {
   // location.pathnameによってタグ変更
@@ -13,14 +13,14 @@ const Header = (): JSX.Element => {
   if (router.pathname === '/') {
     titleTag = (
       <h1 className="title">
-        <span>人口推移</span>
+        <LogoText width="130" height="30" />
         <Logo />
       </h1>
     )
   } else {
     titleTag = (
       <h3 className="title">
-        <span>人口推移</span>
+        <LogoText width="130" height="30" />
         <Logo />
       </h3>
     )
