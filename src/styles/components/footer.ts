@@ -8,5 +8,16 @@ export const Wrap = styled.footer`
   .copyright {
     display: block;
     text-align: center;
+
+    a {
+      color: #111;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 5px;
+      &:not(:last-child)::after {
+        content: '/';
+        margin-left: 5px;
+      }
+    }
   }
 `
